@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Duplicati.Library.Backend.MediaFire.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Email" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cloudsave.io@outlook.com</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">p4ssw0rdVHT</Value>
+    </Setting>
+    <Setting Name="ApplicationId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">44305</Value>
+    </Setting>
+    <Setting Name="Signature" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">byx0nrr6fjtc24d2kscbcr43owoytpq4634oxc4h</Value>
+    </Setting>
+    <Setting Name="TokenVersion" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

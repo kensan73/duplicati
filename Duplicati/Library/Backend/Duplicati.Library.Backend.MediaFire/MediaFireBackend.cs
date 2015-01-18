@@ -12,15 +12,17 @@ namespace Duplicati.Library.Backend.MediaFire
     public class MediaFireBackend : IBackend, IStreamingBackend
     {
         private readonly IRestClient _client;
+        private readonly ISettings _settings;
 
         public MediaFireBackend()
         {
             
         }
 
-        public MediaFireBackend(string url, Dictionary<string, string> options, IRestClient client)
+        public MediaFireBackend(string url, Dictionary<string, string> options, IRestClient client, ISettings settings)
         {
             _client = client;
+            _settings = settings;
         }
 
         public void Dispose()
@@ -46,6 +48,20 @@ namespace Duplicati.Library.Backend.MediaFire
             {
                 throw new ArgumentException();
             }
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException();
+            }
+
+            var email = _settings.Email;
+            var password = _settings.Password;
+            var applicationId = _settings.ApplicationId;
+            var signature = _settings.Signature;
+            var tokenVersion = _settings.TokenVersion;
+
+            var response = _client.Execute<GetSessionTokenResponse>(new RestRequest());
+            if(response.Data.result != "Success")
+                throw new Exception("Failed to get session token");
         }
 
         public void Get(string remotename, string filename)
